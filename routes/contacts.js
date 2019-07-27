@@ -50,13 +50,32 @@ router.post('/', [auth,[
 //@route     PUT api/users/:id
 //@desc     updates a purticular contact belonging to the user logged in
 //@acess     private
-router.put('/:id',(req,res)=>{
-    res.send(`update contact with id:${id}`);
+router.put('/:id',auth,async (req,res)=>{
+    const {name,email,phone,type}= req.body;
+   //Build Contact Object
+   const contactFields={};
+   if(name) contactFields.name=name;
+   if(email) contactFields.email=email;
+   if(type) contactFields.type= type;
+   if(phone) contactFields.phone = phone;
+   try {
+       let contact =await Contact.findById(req.params.id);
+       if(!contact) return res.status(404).json({msg:"Contact not found"});
+       //make sure user owns contact
+       if(contact.user.toString() !==req.user.id) return res.status(401).json({msg:"Not authorized to  update contact"});
+       contact = await Contact.findByIdAndUpdate(req.params.id,{
+           $set:contactFields
+       },{new:true});
+       res.json(contact);
+   } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error');
+   }
 });
 //@route     delete api/users/:id
 //@desc     delete a purticular contact belonging to the user logged in
 //@acess     private
 router.delete('/:id',(req,res)=>{
-    res.send(`delete contact with id:${id}`);
+   
 });
 module.exports= router;
