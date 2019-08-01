@@ -1,18 +1,18 @@
-import React,{useContext,Fragment} from 'react';
-import ContactContext from '../../context/contacts/ContactContext';
+import React,{Fragment,useContext} from 'react';
 import ContactItem from './ContactItem';
 
+import ContactContext from '../../context/contact/ContactContext';
+
 const Contacts = () => {
-    const contactContext = useContext(ContactContext);
-    const {contacts}=contactContext;
+    const contactsContext= useContext(ContactContext);
+    const {contacts}= contactsContext; 
+   
+
     return (
         <Fragment>
-            {contacts.map(contact=>(
-            <ContactItem key={contact.id} contact={contact}/>
-            ))}
+           {contacts.map(contact=>(<ContactItem key={contact.id} contact={contact}/>))}
         </Fragment>
     )
 }
 
 export default Contacts
-
