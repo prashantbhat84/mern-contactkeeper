@@ -41,6 +41,10 @@ const deleteContact=id=>{
     dispatch({type:DELETE_CONTACT,payload:id})
 }
 //update contacts
+const updateContact=contact=>{
+
+    dispatch({type:UPDATE_CONTACT,payload:contact})
+}
 //set current contact
 const setCurrent=contact=>{
 
@@ -60,7 +64,8 @@ return (<ContactContext.Provider value={
         addContact,
         deleteContact,
         setCurrent,
-        clearCurrent
+        clearCurrent,
+        updateContact
     }
 }>{props.children}</ContactContext.Provider>);
 }
