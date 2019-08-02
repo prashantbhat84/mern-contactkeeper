@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 import Home  from './pages/Home';
 import About from './pages/About';
 import ContactState from './context/contact/ContactState';
+import AuthState from './context/auth/AuthState';
 
 
 
@@ -11,6 +12,7 @@ import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
+    <AuthState>
   <ContactState>
     <Router>
     <Fragment>
@@ -24,6 +26,7 @@ function App() {
     </Fragment>
     </Router>
     </ContactState>
+    </AuthState>
    
   );
 }
