@@ -4,12 +4,10 @@ const cors = require('cors');
 
 let app = express();
 connectDB();
-let corsOptions = {
-  origin: 'http://localhost:5000'
-};
+
 //Init middleware
 app.use(express.json({ extended: false }));
-app.use(cors(corsOptions));
+
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header(
