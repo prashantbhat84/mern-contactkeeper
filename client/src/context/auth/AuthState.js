@@ -49,7 +49,7 @@ const AuthState = props => {
   const logout = () => console.log('done');
 
   //Clear Errors
-  const clearErrors = () => console.log('done');
+  const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
 
   return (
     <AuthContext.Provider

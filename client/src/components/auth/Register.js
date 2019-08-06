@@ -1,11 +1,19 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import AlertContext from '../../context/alert/AlertContext';
 import AuthContext from '../../context/auth/AuthContext';
 const Register = props => {
   const alertContext = useContext(AlertContext);
   const authContext = useContext(AuthContext);
-  const { register } = authContext;
+  const { register, error, clearErrors } = authContext;
   const { setAlert } = alertContext;
+  useEffect(() => {
+    if (error === undefined) {
+      setAlert('User Already Exists', 'danger');
+      setTimeout(() => {
+        clearErrors();
+      }, 5000);
+    }
+  }, [error]);
   const [user, setUser] = useState({
     name: '',
     email: '',
