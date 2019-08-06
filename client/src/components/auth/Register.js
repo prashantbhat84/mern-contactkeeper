@@ -26,7 +26,6 @@ const Register = props => {
       setAlert('Passwords do not match', 'danger');
     } else {
       register({ name, email, password });
-      console.log('register');
     }
   };
   const { name, email, password, password2 } = user;
