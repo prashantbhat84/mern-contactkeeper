@@ -1,4 +1,4 @@
 {
-    "mongoURI":"mongodb+srv://pbhat1984:pbhat1984@cluster0-ebvyw.mongodb.net/test?retryWrites=true&w=majority",
-    "jwtSecret":"$Sellcraft123"
+  "mongoURI": "mongodb+srv://pbhat1984:pbhat1984@cluster0-ebvyw.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "$Sellcraft123"
 }

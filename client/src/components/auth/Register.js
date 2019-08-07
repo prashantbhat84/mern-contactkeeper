@@ -4,16 +4,21 @@ import AuthContext from '../../context/auth/AuthContext';
 const Register = props => {
   const alertContext = useContext(AlertContext);
   const authContext = useContext(AuthContext);
-  const { register, error, clearErrors } = authContext;
+  const { register, error, clearErrors, isAuthenticated } = authContext;
   const { setAlert } = alertContext;
   useEffect(() => {
-    if (error === undefined) {
+    if (isAuthenticated) {
+      props.history.push('/');
+    }
+    if (error === 'User Exists') {
       setAlert('User Already Exists', 'danger');
       setTimeout(() => {
         clearErrors();
       }, 5000);
     }
-  }, [error]);
+    // the line below disables setAlert and clearError  warnings for use Effect
+    //eslint-disable-next-line
+  }, [error, isAuthenticated, props.history]);
   const [user, setUser] = useState({
     name: '',
     email: '',
