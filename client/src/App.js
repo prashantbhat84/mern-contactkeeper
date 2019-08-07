@@ -9,6 +9,7 @@ import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';
 import Alert from './components/Alerts/Alerts';
 import setAuthToken from './utils/setAuthToken';
+import PrivateRoute from './components/routing/PrivateRoute';
 
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
@@ -27,7 +28,7 @@ function App() {
               <div className='container'>
                 <Alert />
                 <Switch>
-                  <Route exact path='/' component={Home} />
+                  <PrivateRoute exact path='/' component={Home} />
                   <Route exact path='/about' component={About} />
                   <Route excat path='/register' component={Register} />
                   <Route excat path='/login' component={Login} />
