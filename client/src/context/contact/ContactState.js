@@ -13,7 +13,7 @@ import {
   CONTACT_ERRORS,
   GET_CONTACTS,
   CLEAR_CONTACTS
-} from '../types.js';
+} from './types';
 //test
 
 const ContactState = props => {

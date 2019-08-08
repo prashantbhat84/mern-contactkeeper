@@ -12,7 +12,7 @@ import {
   AUTH_ERROR,
   CLEAR_ERRORS,
   LOGOUT
-} from '../types';
+} from '../contact/types';
 
 const AuthState = props => {
   const initialstate = {

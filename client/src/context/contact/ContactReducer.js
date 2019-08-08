@@ -9,7 +9,7 @@ import {
   CONTACT_ERRORS,
   GET_CONTACTS,
   CLEAR_CONTACTS
-} from '../types';
+} from './types';
 
 export default (state, action) => {
   switch (action.type) {
