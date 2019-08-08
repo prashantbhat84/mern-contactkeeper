@@ -14,6 +14,7 @@ import {
   GET_CONTACTS,
   CLEAR_CONTACTS
 } from '../types';
+//test
 
 const ContactState = props => {
   const initialstate = {
