@@ -4,7 +4,7 @@
   "description": "Contact keeper Application",
   "main": "server.js",
   "engines": {
-    "node": "=12.4.0",
+    "node": "12.4.0",
     "npm": "6.9.0"
   },
   "scripts": {
