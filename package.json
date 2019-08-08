@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Contact keeper Application",
   "main": "server.js",
+  "engines": {
+    "node": "=12.4.0"
+  },
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
